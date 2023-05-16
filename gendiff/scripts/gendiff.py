@@ -1,8 +1,8 @@
-from gendiff.gendiff_args import gendiff_args
+from gendiff.gendiff import gendiff
 
 
 def main():
-    gendiff_args()
+    gendiff()
 
 
 if __name__ == '__main__':

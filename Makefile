@@ -13,7 +13,10 @@ package-reinstall:
 lint:
 	poetry run flake8 gendiff
 
-gendiff:
+gendiff-help:
 	poetry run gendiff -h
 
-.PHONY: install package-install build  package-reinstall lint gendiff
+gendiff:
+	poetry run gendiff tests/data/file1.json tests/data/file2.json
+
+.PHONY: install package-install build  package-reinstall lint gendiff-help gendiff

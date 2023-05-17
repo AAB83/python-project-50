@@ -34,8 +34,7 @@ def generate_diff(file_path1, file_path2):
         else:
             diff.append(f'  - {item}:{file_1[item]}')
             diff.append(f'  + {item}:{file_2[item]}')
-    diff = ['{'] + diff
-    diff.append('}')
+    diff = ['{'] + diff + ['}']
     return '\n'.join(diff)
 
 

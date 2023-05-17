@@ -17,6 +17,6 @@ gendiff-help:
 	poetry run gendiff -h
 
 gendiff:
-	poetry run gendiff tests/data/file1.json tests/data/file2.json
+	poetry run gendiff tests/fixtures/file1.json tests/fixtures/file2.json
 
 .PHONY: install package-install build  package-reinstall lint gendiff-help gendiff

@@ -26,15 +26,15 @@ def generate_diff(file_path1, file_path2):
     key_add = key_set_file2 - key_set_file1
     key_same = key_set_file1 & key_set_file2
 
-    diff += list(map(lambda item: f'  - {item}:{file_1[item]}', key_remote))
-    diff += list(map(lambda item: f'  + {item}:{file_2[item]}', key_add))
+    diff += list(map(lambda item: f'  - {item}: {file_1[item]}', key_remote))
+    diff += list(map(lambda item: f'  + {item}: {file_2[item]}', key_add))
     for item in key_same:
         if file_1[item] == file_2[item]:
-            diff.append(f'    {item}:{file_1[item]}')
+            diff.append(f'    {item}: {file_1[item]}')
         else:
-            diff.append(f'  - {item}:{file_1[item]}')
-            diff.append(f'  + {item}:{file_2[item]}')
-    diff.sort(key=lambda item: item[4:])
+            diff.append(f'  - {item}: {file_1[item]}')
+            diff.append(f'  + {item}: {file_2[item]}')
+    diff.sort(key=lambda item: item[4:item.find(':')])
     diff = ['{'] + diff + ['}']
     return '\n'.join(diff)
 

@@ -19,4 +19,7 @@ gendiff-help:
 gendiff:
 	poetry run gendiff tests/fixtures/file1.json tests/fixtures/file2.json
 
-.PHONY: install package-install build  package-reinstall lint gendiff-help gendiff
+test:
+	poetry run pytest --cov
+
+.PHONY: install package-install build  package-reinstall lint gendiff-help gendiff test

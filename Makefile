@@ -23,6 +23,6 @@ test:
 	poetry run pytest 
 
 test-coverage:
-	poetry run pytest --cov --cov-report xml
+	poetry run pytest --cov --cov-report term-missing --cov-report xml
 
 .PHONY: install package-install build  package-reinstall lint gendiff-help gendiff test

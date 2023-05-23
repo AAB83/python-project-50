@@ -20,6 +20,9 @@ gendiff:
 	poetry run gendiff tests/fixtures/file1.json tests/fixtures/file2.json
 
 test:
-	poetry run pytest --cov
+	poetry run pytest 
+
+test-coverage:
+	poetry run pytest --cov=gendiff --cov-report xml
 
 .PHONY: install package-install build  package-reinstall lint gendiff-help gendiff test

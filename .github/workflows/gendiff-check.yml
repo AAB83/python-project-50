@@ -17,13 +17,13 @@ jobs:
         run: |
           pip install poetry
           make install
-      - name: Run linter and pytest
+      - name: Run linter
         run: |
           make lint
-          make test
-      - uses: paambaati/codeclimate-action@v4
+      - name: Run test
+        uses: paambaati/codeclimate-action@v4
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand: yarn run coverage
+          coverageCommand: make test
           debug: true

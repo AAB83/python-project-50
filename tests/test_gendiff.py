@@ -23,3 +23,11 @@ def test_generate_diff_3():
     result = open('tests/fixtures/result_3.txt').read()
     diff = generate_diff(file_path1, file_path2)
     assert diff == result
+
+
+def test_generate_diff_4():
+    file_path1 = 'tests/fixtures/file1.yml'
+    file_path2 = 'tests/fixtures/file2.yaml'
+    result = open('tests/fixtures/result_1.txt').read()
+    diff = generate_diff(file_path1, file_path2)
+    assert diff == result

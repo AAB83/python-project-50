@@ -1,12 +1,19 @@
-import json, yaml
+import json
+import yaml
 from yaml import SafeLoader
-from parser import gendiff_args
+from gendiff.parser import gendiff_args
 
 
 def generate_diff(file_path1, file_path2):
     diff = []
-    file_1 = json.load(open(file_path1))
-    file_2 = json.load(open(file_path2))
+    if file_path1.split('.')[1] == 'json':
+        file_1 = json.load(open(file_path1))
+        file_2 = json.load(open(file_path2))
+    elif file_path1.split('.')[1] in ('yaml', 'yml'):
+        file_1 = yaml.load(open(file_path1), Loader=SafeLoader)
+        file_2 = yaml.load(open(file_path2), Loader=SafeLoader)
+    else:
+        raise Exception('Invalid file format')
 
     key_set_file1 = set(file_1.keys())
     key_set_file2 = set(file_2.keys())

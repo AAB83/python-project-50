@@ -7,4 +7,5 @@
 Compares two configuration files and shows a difference.!
 
 ### Work example
-1. [libary gendiff](https://asciinema.org/a/QuQ7MBrz7SfF5YcLc4zAQFHBH)
+1. [Compare json format](https://asciinema.org/a/1JmS3ymCGFT3VGV2nq7jDCfnW)
+2. [Compare yml format](https://asciinema.org/a/Q0tRHNsop7tQrVcgDg8Yn8Eyb)
